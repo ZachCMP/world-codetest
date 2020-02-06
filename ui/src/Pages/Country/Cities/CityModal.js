@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaTimes, FaTrash, FaCheck } from 'react-icons/fa'
 import {
   Modal,
   ModalHeader,
@@ -50,7 +51,7 @@ class CityModal extends React.Component {
                   name="name"
                   id="name"
                   placeholder="City Name"
-                  value={city.name}
+                  value={city.name || ''}
                   onChange={e => this.changeField('name', e.target.value)}
                 />
               </FormGroup>
@@ -61,7 +62,7 @@ class CityModal extends React.Component {
                   name="district"
                   id="district"
                   placeholder="City District"
-                  value={city.district}
+                  value={city.district || ''}
                   onChange={e => this.changeField('district', e.target.value)}
                 />
               </FormGroup>
@@ -72,7 +73,7 @@ class CityModal extends React.Component {
                   name="population"
                   id="population"
                   placeholder="City Population"
-                  value={city.population}
+                  value={city.population || ''}
                   onChange={e => this.changeField('population', e.target.value)}
                 />
               </FormGroup>
@@ -80,8 +81,9 @@ class CityModal extends React.Component {
           ) : null}
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={() => saveCity(this.state.city)}>Save</Button>
-          <Button color="danger" onClick={() => deleteCity(this.state.city)}>Delete</Button>
+          <Button color="primary" onClick={() => saveCity(city)}><FaCheck/> Save</Button>
+          {city && city.id ? <Button color="danger" onClick={() => deleteCity(city)}><FaTrash/> Delete</Button> : null}
+          <Button color="secondary" onClick={toggle}><FaTimes/> Cancel</Button>
         </ModalFooter>
       </Modal>
     )
