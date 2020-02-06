@@ -1,7 +1,6 @@
-import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 
-const REGIONS = gql`
+const GET_REGIONS = gql`
   query RegionsForContinent($continent: String!) {
     continent(name: $continent) {
       name
@@ -15,10 +14,4 @@ const REGIONS = gql`
   }
 `
 
-const Regions = ({ continent, children }) => {
-  const data = useQuery(REGIONS, { variables: { continent } })
-
-  return children(data)
-}
-
-export default Regions
+export default GET_REGIONS

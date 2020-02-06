@@ -6,8 +6,6 @@ import {
 } from 'react-router-dom'
 import { Container } from 'reactstrap'
 
-import './App.css';
-
 import Breadcrumbs from './Components/Breadcrumbs'
 import {
   Continents,

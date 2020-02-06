@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "apollo-boost": "^0.4.7",
     "bootstrap": "^4.4.1",
+    "debounce": "^1.2.0",
     "deep-equal": "^2.0.1",
     "graphql": "^14.6.0",
     "react": "^16.12.0",

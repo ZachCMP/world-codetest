@@ -1,5 +1,0 @@
-export { default as ContinentsData } from './Continents'
-export { default as RegionsData } from './Regions'
-export { default as CountriesData } from './Countries'
-export { default as CountryData } from './Country'
-export { default as CitiesData } from './Cities'

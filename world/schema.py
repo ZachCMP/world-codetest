@@ -24,12 +24,20 @@ class Language(DjangoObjectType):
         model = LanguageModel
 
 class Country(DjangoObjectType):
-    cities = graphene.Field(CityList, page=graphene.Int(), page_size=graphene.Int())
+    cities = graphene.Field(
+        CityList, 
+        page=graphene.Int(), 
+        page_size=graphene.Int(), 
+        name_like= graphene.String(),
+    )
     languages = graphene.List(Language)
 
-    def resolve_cities(parent, info, page=None, page_size=DEFAULT_PAGE_SIZE):
+    def resolve_cities(parent, info, page=None, page_size=DEFAULT_PAGE_SIZE, name_like=None):
+        query_set = CityModel.objects.filter(countrycode=parent.code).order_by('name')
+        if name_like:
+            query_set = query_set.filter(name__icontains=name_like)
         return get_paginator(
-            CityModel.objects.filter(countrycode=parent.code).order_by('name'), 
+            query_set, 
             page_size, 
             page, 
             CityList

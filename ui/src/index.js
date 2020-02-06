@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import config from './config'
 
-import './index.css';
 import AppComponent from './App';
 import * as serviceWorker from './serviceWorker';
 

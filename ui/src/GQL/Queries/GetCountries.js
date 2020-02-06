@@ -1,7 +1,6 @@
-import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 
-const COUNTRIES = gql`
+const GET_COUNTRIES = gql`
   query CountriesForRegion($region: String!) {
     # Setting page size to 999 to remove pagination for now
     region(name: $region) {
@@ -24,10 +23,4 @@ const COUNTRIES = gql`
   }
 `
 
-const Countries = ({ region, children }) => {
-  const data = useQuery(COUNTRIES, { variables: { region } })
-
-  return children(data)
-}
-
-export default Countries
+export default GET_COUNTRIES

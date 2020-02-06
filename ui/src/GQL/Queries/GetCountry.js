@@ -1,8 +1,7 @@
-import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 
-const COUNTRY = gql`
-  query Country($code: ID!) {
+const GET_COUNTRY = gql`
+  query GetCountry($code: ID!) {
     country(code: $code) {
       name
       code
@@ -30,9 +29,4 @@ const COUNTRY = gql`
   }
 `
 
-const Country = ({ countryCode, children }) => {
-  const data = useQuery(COUNTRY, { variables: { code: countryCode } })
-  return children(data)
-}
-
-export default Country
+export default GET_COUNTRY
