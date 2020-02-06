@@ -8,6 +8,7 @@ import { Container } from 'reactstrap'
 
 import './App.css';
 
+import Breadcrumbs from './Components/Breadcrumbs'
 import {
   Continents,
   Countries,
@@ -18,6 +19,20 @@ import {
 function App() {
   return (
     <Router>
+      <Route
+        path="/:continent?/:region?/:country?"
+        render={({ match: { params } }) => (
+          <Breadcrumbs 
+            crumbs={[ 
+              { display: 'Home', url: '/' },
+              (params.continent ? { display: params.continent, url: `/${params.continent}` } : null),
+              (params.region ? { display: params.region, url: `/${params.continent}/${params.region}` } : null),
+              (params.country ? { display: params.country, url: `/${params.continent}/${params.region}/${params.country}` } : null),
+            ]}
+          />
+        )}
+      />
+      
       <Container>
         <Switch>
 
