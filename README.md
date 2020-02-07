@@ -75,7 +75,7 @@ vi .env #Set URL to match the app's host/port on your setup
 You should set the URL to:
 
 ```
-http://<app_host>:<app_port>/graphql
+REACT_APP_GQL_URL=http://<app_host>:<app_port>/graphql
 ```
 
 Once you have your API URL set, you need to build the frontend:
