@@ -51,10 +51,10 @@ class Migration(migrations.Migration):
                 'managed': False,
             },
         ),
-        migrations.RenameModel(
-            old_name='City',
-            new_name='CityModel',
-        ),
+        # migrations.RenameModel(
+        #     old_name='City',
+        #     new_name='CityModel',
+        # ),
         migrations.DeleteModel(
             name='Country',
         ),

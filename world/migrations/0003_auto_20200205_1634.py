@@ -47,10 +47,10 @@ class Migration(migrations.Migration):
                 'managed': False,
             },
         ),
-        migrations.RenameModel(
-            old_name='CityModel',
-            new_name='City',
-        ),
+        # migrations.RenameModel(
+        #     old_name='CityModel',
+        #     new_name='City',
+        # ),
         migrations.DeleteModel(
             name='CountrylanguageModel',
         ),
