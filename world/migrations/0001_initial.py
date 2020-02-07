@@ -35,19 +35,19 @@ class Migration(migrations.Migration):
                 'managed': False,
             },
         ),
-        # migrations.CreateModel(
-        #     name='City',
-        #     fields=[
-        #         ('id', models.IntegerField(primary_key=True, serialize=False)),
-        #         ('name', models.TextField()),
-        #         ('countrycode', models.CharField(max_length=3)),
-        #         ('district', models.TextField()),
-        #         ('population', models.IntegerField()),
-        #     ],
-        #     options={
-        #         'db_table': 'city',
-        #     },
-        # ),
+        migrations.CreateModel(
+            name='City',
+            fields=[
+                ('id', models.IntegerField(primary_key=True, serialize=False)),
+                ('name', models.TextField()),
+                ('countrycode', models.CharField(max_length=3)),
+                ('district', models.TextField()),
+                ('population', models.IntegerField()),
+            ],
+            options={
+                'db_table': 'city',
+            },
+        ),
         migrations.CreateModel(
             name='Countrylanguage',
             fields=[
