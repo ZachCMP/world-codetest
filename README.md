@@ -77,6 +77,8 @@ yarn build
 ...
 ```
 
+> **NOTE:**  Make sure to change the URL in the .env file and rebuild the frontend if you have to change the host or port for the app! 
+
 ### Running the App
 
 To run the development version of the app, simply:
