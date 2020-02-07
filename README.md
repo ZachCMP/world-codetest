@@ -5,13 +5,13 @@ A simple app to look up countries and cities, and edit city data, using the [wor
 
 This app consists of a Python Django backend that serves a GraphQL API and a React.js frontend that consumes that API.  Both aspects must be set up in order to run properly.  The Django backend requires a PostgreSQL database for correct operation, which should have the world dataset  loaded and may be installed locally or on a remote server.
 
-###Requirements
+### Requirements
 
 - PostgreSQL > 9.4
 - Python 3.6 or higher
 - Yarn package manager and Node.js to run it
 
-###Database Setup
+### Database Setup
 
 Before starting the app installation, you will need a PostgreSQL database loaded with the world dataset.  Django will need to create tables in that database, so make sure you are using a database you are free to modify.  You will also need a database user for Django to use, which will also need read/write access.
 
