@@ -113,3 +113,13 @@ python manage.py runserver 0.0.0.0:8000
 
 
 If all went well, the app should now be running at `http://<host>:<port>`.  Navigating there with a browser should give you the frontend application.  The GraphQL server and schema is available via GraphiQL at `http://<host>:<port>/graphql`.
+
+### Tests
+
+There is a small test suite for the Python backend that tests the queries used by the frontend.  You can run it with Django's standard test runner:
+
+```bash
+cd <project_root>
+python manage.py test
+```
+
