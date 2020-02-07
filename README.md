@@ -37,7 +37,7 @@ pip install -r requirements.txt
 Set up your database configuration by creating a `.env` file in the `server` directory.  Use `.env.example` in the same directory for reference.  Replace the defaults with the values for your PostgreSQL DB.  If you are on a Unix-based machine:
 
 ```bash
-cd <project_root>
+cd <project_root>/server
 cat .env.example > .env
 vi .env #Edit defaults to match your DB
 ```
@@ -64,7 +64,15 @@ yarn install
 ...
 ```
 
-Set up the frontend to use the correct URL for the backend API.  This is also done with a `.env` file, this time in the `ui` folder.  There is a `.env.example` file that contains the defaults to use for reference.  You should set the URL to:
+Set up the frontend to use the correct URL for the backend API.  This is also done with a `.env` file, this time in the `ui` folder.  There is a `.env.example` file that contains the defaults to use for reference.  Again, if on Unix:
+
+```bash
+cd <project_root>/ui
+cat .env.example > .env
+vi .env #Set URL to match the app's host/port on your setup
+```
+
+You should set the URL to:
 
 ```
 http://<app_host>:<app_port>/graphql
