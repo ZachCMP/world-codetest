@@ -48,11 +48,6 @@ class Migration(migrations.Migration):
         #         'db_table': 'city',
         #     },
         # ),
-        migrations.AlterField(
-            model_name='city',
-            name='id',
-            field=models.AutoField(primary_key=True, serialize=False),
-        )
         migrations.CreateModel(
             name='Countrylanguage',
             fields=[
