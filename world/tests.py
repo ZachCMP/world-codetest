@@ -60,12 +60,6 @@ class GraphQLTests(GraphQLTestCase):
       isofficial = True,
       percentage = 95,
     )
-    Countrylanguage.objects.create(
-      countrycode = country,
-      language = 'Spanish',
-      isofficial = False,
-      percentage = 5,
-    )
 
   def test_continents(self):
     response = self.query(
@@ -238,14 +232,8 @@ class GraphQLTests(GraphQLTestCase):
                 'language': 'English',
                 'isofficial': True,
                 'percentage': 95.0
-              },
-              {
-                'language': 'Spanish',
-                'isofficial': False,
-                'percentage': 5.0
               }
             ]
-            
           }
         }
       }
