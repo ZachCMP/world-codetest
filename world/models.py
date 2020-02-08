@@ -44,7 +44,7 @@ class Country(models.Model):
 
 
 class Countrylanguage(models.Model):
-    countrycode = models.ForeignKey(Country, models.DO_NOTHING, db_column='countrycode', primary_key=True)
+    countrycode = models.OneToOneField(Country, models.DO_NOTHING, db_column='countrycode', primary_key=True)
     language = models.TextField()
     isofficial = models.BooleanField()
     percentage = models.FloatField()
